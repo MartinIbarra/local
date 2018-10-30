@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "supervisor app.js"
+  },
+  "name": "local",
+  "version": "0.1.0",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "convert-excel-to-json": "^1.4.0",
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
+  }
+}

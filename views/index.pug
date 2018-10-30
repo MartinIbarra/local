@@ -1,0 +1,14 @@
+include layout.pug
+div(class="jumbotron")
+	table(class="table table-bordered table-dark")
+		thead
+			tr
+				th(scope="col") Categoría
+				th(scope="col") Descripcion corta
+				th(scope="col") precio dolares
+				th(scope="col") precio en pesos actuales
+		tbody
+			each elem,index in msg
+				tr(id=index)
+					each e,i in elem
+						td(class=i)= e
