@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const fs = require('fs');
 const mongoose = require('mongoose');
-const Product = require('./models/products.js');
+const productsRoutes = require('./models/products.js');
 
 mongoose.connect('mongodb://localhost/localDb', (err) => {
 	if (err) {
@@ -13,6 +13,8 @@ mongoose.connect('mongodb://localhost/localDb', (err) => {
    	};
    	console.log('Successfully connected');
 });
+
+app.use('/', productsRoutes);
 
 app.set('view engine', 'pug');
 app.use(express.static('public'));
