@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const productoStock = new Schema({
+const productoStock = mongoose.Schema({
 	_id: mongoose.Schema.Types.ObjectId,
 	nombre: String,
 	descripcion: String,
