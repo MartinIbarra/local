@@ -7,7 +7,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const Product = require('./models/products.js');
 
-mongoose.connect('mongodb://localhost/localDb', { useMongoClient: true}, (err) => {
+mongoose.connect('mongodb://localhost/localDb', (err) => {
 	if (err) {
    		return err
    	};
