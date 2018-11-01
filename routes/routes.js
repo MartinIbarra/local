@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 const excelToJson = require('convert-excel-to-json');
 
@@ -9,6 +10,13 @@ let text = excelToJson({
 
 let dV = 38,
 	dC = 39.5;
+
+fs.writeFile('log.txt', JSON.stringify(text['Hoja1']), (err) => {
+	if (err){
+		console.log(err);
+	};
+	console.log('The file has been saved!');
+});
 
 function fixExcel(){
 	let res;

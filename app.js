@@ -14,13 +14,6 @@ mongoose.connect('mongodb://localhost/localDb', { useMongoClient: true}, (err) =
    	console.log('Successfully connected');
 });
 
-fs.writeFile('log.txt', JSON.stringify(text['Hoja1']), (err) => {
-	if (err){
-		console.log(err);
-	};
-	console.log('The file has been saved!');
-});
-
 app.set('view engine', 'pug');
 app.use(express.static('public'));
 app.use(bodyParser.json());
