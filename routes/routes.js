@@ -35,13 +35,7 @@ router.get('/', (req, res) => {
 		layout: 'layout',
 		title: 'Local',
 		msg: text['Hoja1']
-	});/*.then(doc =>{
-		console.log(doc)
-		res.statusCode(200).json(doc)	
-	}).catch(err =>{
-		console.log(err)
-		res.statusCode(500).json({error:err});
-	});*/
+	});
 });
 
 router.get('/stock', (req, res) => {
@@ -49,18 +43,18 @@ router.get('/stock', (req, res) => {
 });
 
 router.post('/stock', (req, res) =>{
-	/*const product = new Product {
-		categoria: req.body.categoria,
+	const product = new Product {
+		categoria: req.body.cat,
 		descripcion: req.body.desc,
 		precioVenta: req.body.precioVenta,
 		precioCompra: req.body.precioCompra,
-		cantidad: req.body.cantidad
+		cantidad: req.body.cant
 	};
 	product.save().then(result =>{
 		console.log(result);
 	}).catch(err =>{
 		console.log(err);
-	});*/
+	});
 	res.status(201).json({
         product: product
     });
