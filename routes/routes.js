@@ -43,13 +43,18 @@ router.get('/stock', (req, res) => {
 });
 
 router.post('/stock', (req, res) =>{
-	const product = new Product {
+	console.log('cat: '+ req.body.cat)
+	console.log('cat: '+ req.body.desc)
+	console.log('cat: '+ req.body.precioVenta)
+	console.log('cat: '+ req.body.precioCompra)
+	console.log('cat: '+ req.body.cant)
+	const product = new Product ({
 		categoria: req.body.cat,
 		descripcion: req.body.desc,
 		precioVenta: req.body.precioVenta,
 		precioCompra: req.body.precioCompra,
 		cantidad: req.body.cant
-	};
+	});
 	product.save().then(result =>{
 		console.log(result);
 	}).catch(err =>{
