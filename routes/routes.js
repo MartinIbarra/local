@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
 		layout: 'layout',
 		title: 'Local',
 		msg: text['Hoja1']
-	})/*.then(doc =>{
+	});/*.then(doc =>{
 		console.log(doc)
 		res.statusCode(200).json(doc)	
 	}).catch(err =>{

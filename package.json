@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "supervisor app.js"
+    "start": "supervisor server.js"
   },
   "name": "local",
   "version": "0.1.0",

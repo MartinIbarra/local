@@ -7,7 +7,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const routes = require('./routes/routes.js');
 
-mongoose.connect('mongodb://localhost/localDb', (err) => {
+mongoose.connect('mongodb://localhost/localDb', { useNewUrlParser: true },(err) => {
 	if (err) {
    		return err
    	};
