@@ -43,13 +43,12 @@ router.get('/stock', (req, res) => {
 });
 
 router.post('/stock', (req, res) =>{
-	console.log('cat: '+ req.body.cat)
-	console.log('cat: '+ req.body.desc)
-	console.log('cat: '+ req.body.precioVenta)
-	console.log('cat: '+ req.body.precioCompra)
-	console.log('cat: '+ req.body.cant)
+	console.log('categoria: '+ req.body.cat)
+	console.log('descripcion: '+ req.body.desc)
+	console.log('precio venta: '+ req.body.precioVenta)
+	console.log('precio compra: '+ req.body.precioCompra)
+	console.log('cantidad: '+ req.body.cant)
 	const product = new Product ({
-		_id: mongoose.Schema.Types.ObjectId(),
 		categoria: req.body.cat,
 		descripcion: req.body.desc,
 		precioVenta: req.body.precioVenta,
@@ -61,9 +60,7 @@ router.post('/stock', (req, res) =>{
 	}).catch(err =>{
 		console.log(err);
 	});
-	res.status(201).json({
-        product: product
-    });
+	res.status(201).render('stock');
 });
 
 module.exports = router;
