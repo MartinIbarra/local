@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
+const mongoose = require('mongoose');
+const Product = require('../models/products');
 
 const excelToJson = require('convert-excel-to-json');
 
@@ -10,13 +11,6 @@ let text = excelToJson({
 
 let dV = 38,
 	dC = 39.5;
-
-fs.writeFile('log.txt', JSON.stringify(text['Hoja1']), (err) => {
-	if (err){
-		console.log(err);
-	};
-	console.log('The file has been saved!');
-});
 
 function fixExcel(){
 	let res;
@@ -41,7 +35,13 @@ router.get('/', (req, res) => {
 		layout: 'layout',
 		title: 'Local',
 		msg: text['Hoja1']
-	});
+	})/*.then(doc =>{
+		console.log(doc)
+		res.statusCode(200).json(doc)	
+	}).catch(err =>{
+		console.log(err)
+		res.statusCode(500).json({error:err});
+	});*/
 });
 
 router.get('/stock', (req, res) => {
@@ -49,7 +49,7 @@ router.get('/stock', (req, res) => {
 });
 
 router.post('/stock', (req, res) =>{
-	const product = new Product {
+	/*const product = new Product {
 		nombre: req.body.name,
 		descripcion: req.body.desc,
 		precioVenta: req.body.precioVenta,
@@ -60,7 +60,7 @@ router.post('/stock', (req, res) =>{
 		console.log(result);
 	}).catch(err =>{
 		console.log(err);
-	});
+	});*/
 	res.status(201).json({
         product: product
     });
