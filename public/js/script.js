@@ -1,7 +1,7 @@
 'use strict';
 
 let text = "sasdas";
-function crearElemento(){
+/*function crearElemento(){
 	$('<tr><td><input class="form-control" type="text">' +
 	'</td><td><input class="form-control" type="text">' +
 	'</td><td><input class="form-control" type="text">' +
@@ -9,7 +9,7 @@ function crearElemento(){
 	'</td><td><button onClick="guardarInput()" class="btn btn-info" type="submit">guardar</button>' +
 	'</td><tr>')
 	.prependTo('tbody');
-}
+}*/
 function guardarInput(){
 	console.log('asdasd')
 }

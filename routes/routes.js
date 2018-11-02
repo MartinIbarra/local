@@ -50,7 +50,7 @@ router.get('/stock', (req, res) => {
 
 router.post('/stock', (req, res) =>{
 	/*const product = new Product {
-		nombre: req.body.name,
+		categoria: req.body.categoria,
 		descripcion: req.body.desc,
 		precioVenta: req.body.precioVenta,
 		precioCompra: req.body.precioCompra,
