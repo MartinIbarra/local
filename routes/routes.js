@@ -49,6 +49,7 @@ router.post('/stock', (req, res) =>{
 	console.log('cat: '+ req.body.precioCompra)
 	console.log('cat: '+ req.body.cant)
 	const product = new Product ({
+		_id: mongoose.Schema.Types.ObjectId(),
 		categoria: req.body.cat,
 		descripcion: req.body.desc,
 		precioVenta: req.body.precioVenta,

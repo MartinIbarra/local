@@ -1,18 +1,4 @@
 'use strict';
-
-let text = "sasdas";
-/*function crearElemento(){
-	$('<tr><td><input class="form-control" type="text">' +
-	'</td><td><input class="form-control" type="text">' +
-	'</td><td><input class="form-control" type="text">' +
-	'</td><td><input class="form-control" type="text">' +
-	'</td><td><button onClick="guardarInput()" class="btn btn-info" type="submit">guardar</button>' +
-	'</td><tr>')
-	.prependTo('tbody');
-}*/
-function guardarInput(){
-	console.log('asdasd')
-}
 $(function() {
 	let trs = $('tr'),
 		search = $('#search');
@@ -28,7 +14,7 @@ $(function() {
 			}
 		});
 	});
-	$('form').submit((e)=>{
+	$('#buscador').submit((e)=>{
 		e.preventDefault();
 	});
 });
