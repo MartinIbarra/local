@@ -43,11 +43,6 @@ router.get('/stock', (req, res) => {
 });
 
 router.post('/stock', (req, res) =>{
-	console.log('categoria: '+ req.body.cat)
-	console.log('descripcion: '+ req.body.desc)
-	console.log('precio venta: '+ req.body.precioVenta)
-	console.log('precio compra: '+ req.body.precioCompra)
-	console.log('cantidad: '+ req.body.cant)
 	const product = new Product ({
 		categoria: req.body.cat,
 		descripcion: req.body.desc,
