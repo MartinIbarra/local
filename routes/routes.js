@@ -31,7 +31,7 @@ function fixExcel(){
 
 router.get('/', (req, res) => {
 	fixExcel();
-	res.render('index', {
+	res.status(200).render('index', {
 		layout: 'layout',
 		title: 'Local',
 		msg: text['Hoja1']

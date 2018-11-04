@@ -23,9 +23,5 @@ div(class="jumbotron")
 				th(scope="col") Precio de compra
 				th(scope="col") Cantidad
 		tbody
-			if message
-				each elem,index in message
-					tr(id=index)
-						each e,i in elem
-							td(class=i)= e
+			p= message
 include navFixBottom.pug
