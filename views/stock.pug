@@ -24,8 +24,8 @@ div(class="jumbotron")
 				th(scope="col") Precio de compra
 				th(scope="col") Cantidad
 		tbody
-			each elem,index in result
-				tr
-					each e,i in elem
+			for elem,index in result
+				for e,i in elem
+					tr
 						th= e
 include navFixBottom.pug
