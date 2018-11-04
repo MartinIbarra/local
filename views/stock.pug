@@ -14,6 +14,18 @@ div(class="jumbotron")
 				input(type="number" name="cant" class="form-control" placeholder="Cantidad" required)
 		br
 		input(type="submit" class="btn btn-primary" value="Guardar")
-	div
-		p= message
+	table(class="table table-bordered table-dark")
+		thead
+			tr
+				th(scope="col") Categoría
+				th(scope="col") Descripcion
+				th(scope="col") Precio de venta
+				th(scope="col") Precio de compra
+				th(scope="col") Cantidad
+		tbody
+			if message
+				each elem,index in message
+					tr(id=index)
+						each e,i in elem
+							td(class=i)= e
 include navFixBottom.pug
