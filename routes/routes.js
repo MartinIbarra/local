@@ -31,7 +31,8 @@ function fixExcel(){
 
 router.get('/', (req, res) => {
 	fixExcel();
-	res.status(200).render('index', {
+	res.status(200)
+	.render('index', {
 		layout: 'layout',
 		title: 'Local',
 		msg: text['Hoja1']
@@ -41,16 +42,22 @@ router.get('/', (req, res) => {
 router.get('/stock', (req, res) => {
 	Product.find()
 	.exec()
-	.then(result =>{
-		res.status(201).render('stock', {message:result});
+	.then(result => {
+		res.status(201)
+		.render('stock', {
+			message:result
+		})
 	})
-	.catch(err =>{
+	.catch(err => {
 		console.log(err)
-		res.status(500).render('stock', {err: err});
+		res.status(500)
+		.render('stock', {
+			err: err
+		})
 	});
 });
 
-router.post('/stock', (req, res) =>{
+router.post('/stock', (req, res) => {
 	const product = new Product ({
 		categoria: req.body.cat,
 		descripcion: req.body.desc,
@@ -60,11 +67,12 @@ router.post('/stock', (req, res) =>{
 	});
 	product.save()
 	.then(result =>{
-		console.log(result);
+		console.log(result)
+		res.status(201).render('stock')
 	}).catch(err =>{
-		console.log(err);
+		console.log(err)
+		res.status(500).render('index')
 	});
-	res.status(201).render('stock');
 });
 
 module.exports = router;
