@@ -17,11 +17,15 @@ div(class="jumbotron")
 	table(class="table table-bordered table-dark")
 		thead
 			tr
+				th(scope="col") Id
 				th(scope="col") Categoría
 				th(scope="col") Descripcion
 				th(scope="col") Precio de venta
 				th(scope="col") Precio de compra
 				th(scope="col") Cantidad
 		tbody
-			p= Object.keys(message).toString()
+			each elem,index in result
+				tr
+					each e,i in elem
+						th= e
 include navFixBottom.pug

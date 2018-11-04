@@ -43,10 +43,9 @@ router.get('/stock', (req, res) => {
 	Product.find()
 	.exec()
 	.then(result => {
+		console.log(result)
 		res.status(201)
-		.render('stock', {
-			message:result
-		})
+		.render('stock', {result})
 	})
 	.catch(err => {
 		console.log(err)
