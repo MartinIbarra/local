@@ -24,12 +24,13 @@ div(class="jumbotron")
 				th(scope="col") Precio de compra
 				th(scope="col") Cantidad
 		tbody
-			each elem,index in result
-				tr
-					th= result[index]._id
-					th= result[index].categoria
-					th= result[index].descripcion
-					th= result[index].precioVenta
-					th= result[index].precioCompra
-					th= result[index].cantidad
+			if result
+				each elem,index in result
+					tr
+						th= result[index]._id
+						th= result[index].categoria
+						th= result[index].descripcion
+						th= result[index].precioVenta
+						th= result[index].precioCompra
+						th= result[index].cantidad
 include navFixBottom.pug

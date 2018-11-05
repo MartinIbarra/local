@@ -42,12 +42,12 @@ router.get('/', (req, res) => {
 router.get('/stock', (req, res) => {
 	Product.find()
 	.exec()
-	.then(result => {
-		console.log(result)
+	.then((result) => {
+		//console.log(result)
 		res.status(201)
 		.render('stock', {result})
 	})
-	.catch(err => {
+	.catch((err) => {
 		console.log(err)
 		res.status(500)
 		.render('stock', {
@@ -65,12 +65,14 @@ router.post('/stock', (req, res) => {
 		cantidad: req.body.cant
 	});
 	product.save()
-	.then(result =>{
+	.then((result) =>{
 		console.log(result)
-		res.status(201).render('stock')
-	}).catch(err =>{
+		res.status(201)
+		.redirect('/stock')
+	}).catch((err) =>{
 		console.log(err)
-		res.status(500).render('index')
+		res.status(500)
+		.render('index')
 	});
 });
 
