@@ -24,8 +24,12 @@ div(class="jumbotron")
 				th(scope="col") Precio de compra
 				th(scope="col") Cantidad
 		tbody
-			for elem,index in result
-				for e,i in elem
-					tr
-						th= e
+			each elem,index in result
+				tr
+					th= result[index]._id
+					th= result[index].categoria
+					th= result[index].descripcion
+					th= result[index].precioVenta
+					th= result[index].precioCompra
+					th= result[index].cantidad
 include navFixBottom.pug
