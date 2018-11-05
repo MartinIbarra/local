@@ -29,7 +29,7 @@ function fixExcel(){
 	});
 };
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
 	fixExcel();
 	res.status(200)
 	.render('index', {
@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
 	});
 });
 
-router.get('/stock', (req, res) => {
+router.get('/stock', (req, res, next) => {
 	Product.find()
 	.exec()
 	.then((result) => {
@@ -56,7 +56,7 @@ router.get('/stock', (req, res) => {
 	});
 });
 
-router.post('/stock', (req, res) => {
+router.post('/stock', (req, res, next) => {
 	const product = new Product ({
 		categoria: req.body.cat,
 		descripcion: req.body.desc,

@@ -25,5 +25,17 @@ app.use(bodyParser.urlencoded({
 app.use('/', routes);
 app.use('/stock', routes);
 
+//Error handling
+app.use((req, res, next) => {
+	const error = new Error('not found');
+	error.status('404');
+	next(error);
+});
+
+app.use((error, req, res, next) =>{
+	res.status(error.status || 500);
+	res.render('error', {error});
+})
+
 
 module.exports = app;
