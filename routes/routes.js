@@ -76,4 +76,20 @@ router.post('/stock', (req, res, next) => {
 	});
 });
 
+router.delete('/stock/:productId', (req, res, next) => {
+	const id = req.params.productId;
+
+	Product.remove({_id: id})
+	.exec()
+	.then((result) => {
+		res.status(200)
+		.redirect('/stock')
+	})
+	.catch((err) => {
+		console.log(err)
+		res.status(err.status || 500)
+		.render('error')
+	})
+});
+
 module.exports = router;
