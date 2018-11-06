@@ -19,8 +19,8 @@ div(class="jumbotron")
 			tr
 				th(scope="col") Categoría
 				th(scope="col") Descripcion
-				th(scope="col") Precio de venta
 				th(scope="col") Precio de compra
+				th(scope="col") Precio de venta
 				th(scope="col") Cantidad
 		tbody
 			if result
@@ -28,8 +28,8 @@ div(class="jumbotron")
 					tr
 						th= result[i].categoria
 						th= result[i].descripcion
-						th= result[i].precioVenta
 						th= result[i].precioCompra
+						th= result[i].precioVenta
 						th= result[i].cantidad
 						th
 							a(class="btn btn-primary btn-sm active" href='/stock/'+result[i]._id) Editar
