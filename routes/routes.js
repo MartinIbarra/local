@@ -76,11 +76,11 @@ router.post('/stock', (req, res, next) => {
 	});
 });
 
-router.delete('/stock/:productId', (req, res, next) => {
+router.get('/stock/:productId', (req, res, next) => {
 	const id = req.params.productId;
 	console.log(id);
-	
-	Product.remove({_id: id})
+
+	Product.deleteOne({_id: id})
 	.exec()
 	.then((result) => {
 		res.status(200)
