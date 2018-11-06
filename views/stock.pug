@@ -32,5 +32,6 @@ div(class="jumbotron")
 						th= result[i].precioCompra
 						th= result[i].cantidad
 						th
-							button(class="btn btn-primary") Editar
+							a(class="btn btn-primary btn-sm active" href=result[i]._id) Editar
+							a(class="btn btn-danger btn-sm active" href=result[i]._id) Borrar
 include navFixBottom.pug
