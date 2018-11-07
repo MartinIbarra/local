@@ -69,7 +69,8 @@ router.post('/stock', (req, res, next) => {
 		console.log(result)
 		res.status(201)
 		.redirect('/stock')
-	}).catch((err) =>{
+	})
+	.catch((err) =>{
 		console.log(err)
 		res.status(500)
 		.render('index')
